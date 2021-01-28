@@ -68,6 +68,18 @@ fn contains_todo(line: &str) -> bool {
     false
 }
 
+fn parse_line(line: &str) -> &str {
+    let vec: Vec<&str> = line.split("TODO").collect();
+    let after_todo = vec[1];
+    let description = if after_todo.starts_with(":") {
+        &after_todo[1..]
+    } else {
+        after_todo
+    }.trim();
+
+    description
+}
+
 fn read_files(files: Vec<String>) -> io::Result<()> {
     for path in files {
         let file = File::open(path)?;
@@ -75,7 +87,8 @@ fn read_files(files: Vec<String>) -> io::Result<()> {
         for line_option in buffer.lines() {
             let line = line_option.unwrap();
             if contains_todo(&line) {
-                println!("{}", line);
+                let description = parse_line(&line);
+                println!("{}", description);
             }
         }
     }
