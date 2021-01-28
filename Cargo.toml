@@ -1,0 +1,8 @@
+[package]
+name = "todo-issue"
+version = "0.1.0"
+authors = ["Warren Galyen <wgalyen@hotmail.com>"]
+edition = "2018"
+
+[dependencies]
+rpassword = "5.0.1"
