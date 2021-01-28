@@ -5,5 +5,5 @@ authors = ["Warren Galyen <wgalyen@hotmail.com>"]
 edition = "2018"
 
 [dependencies]
-reqwest = "0.11.0"
+reqwest = "0.9.18"
 rpassword = "5.0.1"
