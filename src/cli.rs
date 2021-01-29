@@ -50,20 +50,17 @@ pub fn init() -> Args {
         .author("Warren Galyen <wgalyen@hotmail.com>")
         .about("Converts TODO comments to GitHub issues")
         .arg(
+            Arg::with_name("token")
+                .help("Sets the token for user")
+                .index(1),
+        )
+        .arg(
             Arg::with_name("pattern")
                 .short("p")
                 .long("pattern")
                 .value_name("PATTERN")
                 .help("Sets a glob pattern to narrow search for TODO comments")
                 .takes_value(true),
-        )
-        .arg(
-            Arg::with_name("token")
-                .short("t")
-                .long("token")
-                .value_name("TOKEN")
-                .help("Sets the token for user")
-                .takes_value(true)
         )
         .arg(
             Arg::with_name("dry-run")
