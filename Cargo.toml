@@ -6,7 +6,6 @@ edition = "2018"
 
 [dependencies]
 clap = "2.33.0"
-dialoguer = "0.7.1"
+dialoguer = "0.4.0"
 reqwest = "0.9.18"
-rpassword = "5.0.1"
 serde = "1.0.97"
