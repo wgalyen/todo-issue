@@ -152,6 +152,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "console"
+version = "0.14.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7cc80946b3480f421c2f17ed1cb841753a371c7c5104f51d507e13f532c856aa"
+dependencies = [
+ "encode_unicode",
+ "lazy_static",
+ "libc",
+ "regex",
+ "terminal_size",
+ "unicode-width",
+ "winapi 0.3.9",
+]
+
+[[package]]
 name = "cookie"
 version = "0.12.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -258,7 +273,7 @@ version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "116f66c4e7b19af0d52857aa4ff710cc3b4781d9c16616e31540bc55ec57ba8c"
 dependencies = [
- "console",
+ "console 0.13.0",
  "lazy_static",
  "tempfile",
 ]
@@ -1317,6 +1332,7 @@ name = "todo-issue"
 version = "0.1.0"
 dependencies = [
  "clap",
+ "console 0.14.0",
  "dialoguer",
  "glob",
  "reqwest",
