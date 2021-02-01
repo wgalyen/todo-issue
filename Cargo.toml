@@ -2,6 +2,15 @@
 name = "todo-issue"
 version = "0.1.0"
 authors = ["Warren Galyen <wgalyen@hotmail.com>"]
+description = "CLI tool that converts forgotten TODO comments into actionable GitHub issues."
+license = "MIT"
+readme = "README.md"
+exclude = ["dist/"]
+keywords = ["TODO", "comments", "cli", "GitHub", "issues"]
+categories = ["command-line-utilities", "text-processing", "development-tools"]
+documentation ="https://github.com/wgalyen/todo-issue/"
+homepage ="https://github.com/wgalyen/todo-issue/"
+repository ="https://github.com/wgalyen/todo-issue/"
 edition = "2018"
 
 [dependencies]
