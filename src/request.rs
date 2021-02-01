@@ -22,7 +22,7 @@ pub struct Request {
 
 impl Request {
     pub fn new(token: String) -> Request {
-        //! Creates a new request object containing the http client,
+        //! Creates a new request object that encapsulates the http client,
         //! url formatted with the API endpoint and user's remote repo,
         //! and auth header containing the user's token.
         let remote = command::get_remote_name();
@@ -75,7 +75,7 @@ impl Request {
             style(&self.remote_url).italic()
         );
 
-        let json = json!({
+        let params = json!({
             "labels": issue::LABEL,
             "state": "all",
         });
@@ -83,7 +83,7 @@ impl Request {
             .client
             .get(&self.url)
             .header(AUTHORIZATION, self.auth_header.clone())
-            .query(&json)
+            .query(&params)
             .send()?;
 
         Self::assert_successful_response(response.status());
